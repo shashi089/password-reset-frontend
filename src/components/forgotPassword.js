@@ -17,7 +17,7 @@ export default function Forgotpassword() {
   const forgot = async (values) => {
     try {
       const link = await axios.post(
-        "http://localhost:3001/users/login/forgot-password",
+        "https://password-reset-backend-node.herokuapp.com/users/login/forgot-password",
         {
           email: values.email,
         }

@@ -20,7 +20,7 @@ export default function Register() {
   const createAccount = async (values) => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/users/register",
+        "https://password-reset-backend-node.herokuapp.com/users/register",
         {
           name: values.name,
           email: values.email,

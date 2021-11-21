@@ -43,7 +43,7 @@ export default function Changepassword() {
   const checkLink = async () => {
     try {
       await axios.get(
-        `http://localhost:3001/users/forgot-password/${userid}/${token}`
+        `https://password-reset-backend-node.herokuapp.com/users/forgot-password/${userid}/${token}`
       );
       setDummy(false);
       setMain(true);
@@ -60,7 +60,7 @@ export default function Changepassword() {
   const resetPassword = async () => {
     try {
       const link = await axios.post(
-        `http://localhost:3001/users/forgot-password/${userid}/${token}`,
+        `https://password-reset-backend-node.herokuapp.com/users/forgot-password/${userid}/${token}`,
         {
           password: password,
           confirm_password: confirm_password,

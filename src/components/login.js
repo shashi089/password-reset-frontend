@@ -23,10 +23,13 @@ export default function Login() {
 
   const loginAccount = async (values) => {
     try {
-      const response = await axios.post("http://localhost:3001/users/login", {
-        email: values.email,
-        password: values.password,
-      });
+      const response = await axios.post(
+        "https://password-reset-backend-node.herokuapp.com/users/login",
+        {
+          email: values.email,
+          password: values.password,
+        }
+      );
       if (response.status === 200) {
         window.localStorage.setItem("auth-token", response.data.token);
       }
